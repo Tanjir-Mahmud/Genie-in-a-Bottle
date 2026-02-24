@@ -1,0 +1,16 @@
+node_modules/
+.env
+ambient_root.db
+.next/
+dashboard/node_modules/
+dashboard/.next/
+LogiPlugin/AmbientRootPlugin/bin/
+LogiPlugin/AmbientRootPlugin/obj/
+LogiPlugin/AmbientRootPlugin/libs/
+*.db
+build_output.txt
+build_output_utf8.txt
+.gemini/
+verify_*.js
+test.js
+query_db.js

@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0d1117;
+  --foreground: #c9d1d9;
+  --card: #161b22;
+  --card-hover: #1c2129;
+  --primary: #00b5e2;
+  --primary-glow: rgba(0, 181, 226, 0.25);
+  --border: #30363d;
+  --accent-gold: #ffd700;
+  --accent-green: #00ff88;
+  --accent-red: #ff4757;
+  --accent-purple: #b066ff;
+  --surface: #21262d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-primary: var(--primary);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ═══ Card System ═══ */
+.genie-card {
+  @apply bg-card border border-border rounded-2xl p-5;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.genie-card:hover {
+  border-color: rgba(0, 181, 226, 0.15);
+}
+
+/* ═══ Button System ═══ */
+.genie-btn {
+  @apply px-5 py-2.5 rounded-xl font-semibold text-sm transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer;
+}
+
+.genie-btn-primary {
+  @apply bg-primary text-background;
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.genie-btn-primary:hover {
+  filter: brightness(1.15);
+}
+
+.genie-btn-ghost {
+  @apply bg-surface border border-border text-foreground/70;
+}
+
+.genie-btn-ghost:hover {
+  color: var(--foreground);
+  background: var(--card-hover);
+}
+
+/* ═══ Context Toggle ═══ */
+.context-btn {
+  @apply flex-1 flex flex-col items-center gap-2 py-4 rounded-xl font-semibold text-sm transition-all cursor-pointer border;
+}
+
+.context-btn-active {
+  @apply bg-primary/10 border-primary/40 text-primary;
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.context-btn-inactive {
+  @apply bg-surface border-border text-foreground/40 hover:text-foreground/70 hover:border-border;
+}
+
+/* ═══ Smart Home Tile ═══ */
+.smart-tile {
+  @apply flex flex-col items-center justify-center gap-2 py-4 px-3 rounded-xl bg-surface border border-border text-foreground/60 cursor-pointer transition-all;
+}
+
+.smart-tile:hover {
+  @apply border-primary/30 text-primary;
+}
+
+.smart-tile-active {
+  @apply border-primary/40 text-primary;
+  background: rgba(0, 181, 226, 0.08);
+}
+
+/* ═══ Glow Effects ═══ */
+.glow-green {
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+}
+
+.glow-primary {
+  box-shadow: 0 0 12px var(--primary-glow);
+}
+
+.glow-gold {
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
+}
+
+/* ═══ Tone Dial Slider ═══ */
+.tone-slider {
+  @apply w-full h-1.5 rounded-full appearance-none cursor-pointer;
+  background: linear-gradient(to right, var(--primary), var(--accent-purple));
+}
+
+.tone-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-purple);
+  box-shadow: 0 0 10px rgba(176, 102, 255, 0.5);
+  cursor: pointer;
+}
+
+.tone-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-purple);
+  box-shadow: 0 0 10px rgba(176, 102, 255, 0.5);
+  cursor: pointer;
+  border: none;
+}
+
+/* ═══ Audit Log Entry ═══ */
+.audit-entry {
+  @apply py-3 border-b border-border/50 last:border-0;
+}
+
+/* ═══ Settings Modal ═══ */
+.modal-overlay {
+  @apply fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center;
+}
+
+.modal-card {
+  @apply bg-card border border-border rounded-2xl p-6 w-full max-w-md mx-4 shadow-2xl;
+}
+
+/* ═══ Pulse Animation ═══ */
+@keyframes soft-pulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.soft-pulse {
+  animation: soft-pulse 3s ease-in-out infinite;
+}
+
+/* ═══ Shield Glow ═══ */
+.shield-glow {
+  filter: drop-shadow(0 0 20px rgba(0, 181, 226, 0.3));
+}

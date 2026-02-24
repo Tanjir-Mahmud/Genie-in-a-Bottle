@@ -1,0 +1,46 @@
+{
+    "id": "com.ambientroot.genie",
+    "name": "Genie in a Bottle",
+    "description": "AI-powered ambient intelligence bridge for Logitech MX Creative Console and MX Master 4. Transforms peripherals into a sentient cockpit with persona switching, haptic feedback, unified messaging, and smart home control.",
+    "version": "1.0.0",
+    "author": "Ambient Root Team",
+    "platforms": [
+        "win-x64"
+    ],
+    "main": "AmbientRootPlugin.dll",
+    "actions": [
+        {
+            "id": "persona_creative",
+            "name": "Creative Genie",
+            "type": "display_key",
+            "dynamic": true
+        },
+        {
+            "id": "persona_techLead",
+            "name": "Technical Lead",
+            "type": "display_key",
+            "dynamic": true
+        },
+        {
+            "id": "persona_smartHome",
+            "name": "Smart Home Warden",
+            "type": "display_key",
+            "dynamic": true
+        },
+        {
+            "id": "genie_status",
+            "name": "Genie Status",
+            "type": "ring_slice",
+            "dynamic": true
+        },
+        {
+            "id": "tone_dial",
+            "name": "Tone Dial",
+            "type": "dial",
+            "dynamic": true
+        }
+    ],
+    "capabilities": {
+        "background": true
+    }
+}
