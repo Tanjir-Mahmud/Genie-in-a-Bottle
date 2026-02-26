@@ -251,4 +251,4 @@ Genie-in-a-Bottle/
 
 ## 📄 License
 
-Built for the **Logitech DevStudio Challenge 2026**.
+MIT License — built for the **Logitech DevStudio Challenge 2026**
